@@ -1,0 +1,28 @@
+# .cursorrules
+
+# 프로젝트 전반 규칙
+rules:
+  - Always write Python 3.9+ code with clear function boundaries.
+  - Use standard libraries whenever possible; external dependencies must be minimal.
+  - The main goal of this project is:
+    - Input: arXiv URL (e.g., https://arxiv.org/pdf/1706.03762)
+    - Step 1: Download the PDF
+    - Step 2: Extract plain text from PDF
+    - Step 3: Split into sections (abstract, introduction, methods, results/discussion, conclusion)
+    - Step 4: Summarize each section
+    - Step 5: Generate a single-page Markdown summary file
+
+# 코드 스타일
+  - Write code in a single Python script (`arxiv_summary.py`).
+  - Provide a CLI interface: `python arxiv_summary.py --url <arxiv_url> -o summary.md`
+  - Keep functions small, reusable, and testable.
+  - Add inline comments for key logic (PDF parsing, section splitting, summarization).
+  - Handle errors gracefully (invalid URL, download failure, no abstract section, etc.).
+
+# 테스트
+  - Default test case must use `https://arxiv.org/pdf/1706.03762`
+  - The script must run end-to-end without additional setup.
+
+# 문서화
+  - At the end of the file, include an example usage in comments.
+  - Generate output in Markdown with clear headings.
